@@ -1,7 +1,7 @@
 ## 1. Créer une Container Grafana
 
 ```bash
-docker run -d --name=grafana -p 8080:3000 -v grafana_config:/etc/grafana -v grafana_data:/var/lib/grafana -v grafana_logs:/var/log/grafana grafana/grafana
+docker run -d --name=grafana -p 8080:3000 -v g_config:/etc/grafana -v g_data:/var/lib/grafana -v g_logs:/var/log/grafana grafana/grafana
 
 ```
 
@@ -39,7 +39,7 @@ mysql> Show tables;
 
 ```
 
-```mysql
+```sql
 INSERT INTO CloudEngineer (eng_id, first_name, last_name, role) VALUES (1,'Mohamed','B', 'Solutions Architect');
 
 INSERT INTO CloudEngineer (eng_id, first_name, last_name, role) VALUES (2, 'Mamadou', 'D.', 'Kubernetes Engineer');
@@ -49,7 +49,7 @@ INSERT INTO CloudEngineer (eng_id, first_name, last_name, role) VALUES (3, 'Ben'
 INSERT INTO CloudEngineer (eng_id, first_name, last_name, role) VALUES (4, 'Elon', 'Musk', 'CEO');
 ```
 
-```mysql
+```sql
 CREATE USER 'grafana' IDENTIFIED BY 'grafana';
 GRANT SELECT ON InspireDEV.* TO 'grafana';
 flush privileges;
